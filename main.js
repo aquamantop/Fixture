@@ -4,9 +4,11 @@ const segundos = document.querySelectorAll(".segundo");
 const section = document.querySelectorAll("section");
 const puesto1 = document.getElementById("puesto1");
 const puesto2 = document.getElementById("puesto2");
-const paises = document.querySelectorAll(".pais")
+const paises = document.querySelectorAll(".pais");
+const link = document.querySelectorAll("a")
 
-
+console.log(paises[0].innerHTML);
+console.log(link);
 
 /* Empezamos el listener */
 window.addEventListener("load", () => {
@@ -17,6 +19,7 @@ window.addEventListener("load", () => {
 
 });
 
+/* Logica para elegir primer puesto del grupo seleccionado */
 function firts () {
     primeros.forEach( element => {
         element.addEventListener("click", (e) => {
@@ -24,7 +27,7 @@ function firts () {
 
             /* Validamos */
             if (e.path[2].classList.value.includes("p2")){
-                console.log("elegi bien pelotudo");
+                alert("Estas eligiendo segundo puesto boludito");
             } else {
                 /* ocultar tarjetas */
                 section.forEach( s => s.classList.toggle("hide"))
@@ -39,22 +42,28 @@ function firts () {
 
                 /* Marcamos pais elegido */
                 paises.forEach( e => {
-
+                    e.addEventListener("click", () => {
+                        let a = e.innerHTML + "-grupoUno1";
+                        octavos.push(e.innerHTML)
+                        console.log(octavos);
+                        console.log(a);
+                    });
                 });
             };
         });
     });
 };
 
+/* Logica para elegir segundo puesto del grupo seleccionado */
 function second () {
-segundos.forEach( element => {
+    segundos.forEach( element => {
         
         element.addEventListener("click", (e) => {
             e.preventDefault();       
 
             /* Validamos */
             if (e.path[2].classList.value.includes("p1")){
-                console.log("elegi bien pelotudo");
+                alert("Estas eligiendo primer puesto boludito");
             } else {
                 /* ocultar tarjetas */
                 section.forEach( s => s.classList.toggle("hide"))
@@ -66,6 +75,11 @@ segundos.forEach( element => {
                 /* Aviso para elegir pais */
                 puesto2.classList.toggle("hide")
                 puesto1.classList.add("hide")
+
+                /* Ocultamos link a fase final */
+                link.forEach(e => {
+
+                });
 
                 /* Marcamos pais elegido */
                 paises.forEach( e => {
