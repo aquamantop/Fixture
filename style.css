@@ -8,7 +8,12 @@
 
 /* Titulo */
 h1 {
-    font-size: 3rem;
+    font-size: 2.7rem;
+    color: rgb(255, 255, 0);
+    text-align: center;
+}
+h2 {
+    font-size: 1.9rem;
     color: rgb(255, 255, 0);
     text-align: center;
 }
@@ -16,14 +21,14 @@ h1 {
 /* Contenedor */
 .container {  
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 0.8fr 0.8fr 0.8fr 0.8fr;
     grid-template-rows: 1fr 1fr;
     gap: 5em;
     grid-auto-flow: row;
     grid-template-areas:
       "g1 g2 g3 g4"
       "g5 g6 g7 g8";
-    margin: 0.5rem 1rem;
+    margin: 2rem;
 }
   
 /* Tarjetas de grupos */
@@ -104,7 +109,6 @@ button {
 /* Estilo de las tarjetas */
 section {
     color: rgb(255, 255, 0);
-    width: 90%;
     text-align: center;
     font-weight: bolder;
     border: 0.3rem solid rgb(255, 255, 0);
@@ -123,6 +127,9 @@ h1 a {
     border: 2px solid;
     background-color: black;
     text-align: center;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    font-size: 2rem;
 }
 a:link, a:visited {
     color: rgb(255, 255, 0);
@@ -138,7 +145,7 @@ a:hover {
 .puestos{
     color: rgb(238, 0, 0);
     position: absolute;
-    top: 53%;
+    top: 60%;
     right: 26%;
     font-size: 4rem;
 }
@@ -146,3 +153,127 @@ a:hover {
     background-color: black;
     color: white;
 }
+
+/* Estilo de fase final */
+#sig-fase section {
+    width: 20%;
+}
+
+
+
+
+
+
+
+/* PRUEBA */
+
+.container {  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1.5fr 1.5fr 2fr;
+    gap: 10em 5em;
+    grid-auto-flow: row;
+    justify-content: stretch;
+    align-content: stretch;
+    align-items: stretch;
+    grid-template-areas:
+      "Octavos1 Octavos2"
+      "Cuartos1 Cuartos2"
+      "Semifinal Semifinal"
+      "Final Final";
+  }
+  
+  .Octavos1 {  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "partido1 partido3"
+      "paritdo2 partido4";
+    grid-area: Octavos1;
+  }
+  
+  .partido1 { grid-area: partido1; }
+  
+  .paritdo2 { grid-area: paritdo2; }
+  
+  .partido3 { grid-area: partido3; }
+  
+  .partido4 { grid-area: partido4; }
+  
+  .Octavos2 {  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "partido5 partido7"
+      "partido6 partido8";
+    grid-area: Octavos2;
+  }
+  
+  .partido5 { grid-area: partido5; }
+  
+  .partido6 { grid-area: partido6; }
+  
+  .partido7 { grid-area: partido7; }
+  
+  .partido8 { grid-area: partido8; }
+  
+  .Cuartos1 {  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "partidoCuartos1 partidoCuartos2";
+    grid-area: Cuartos1;
+  }
+  
+  .partidoCuartos1 { grid-area: partidoCuartos1; }
+  
+  .partidoCuartos2 { grid-area: partidoCuartos2; }
+  
+  .Cuartos2 {  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "partidoCuartos3 partidoCuartos4";
+    grid-area: Cuartos2;
+  }
+  
+  .partidoCuartos3 { grid-area: partidoCuartos3; }
+  
+  .partidoCuartos4 { grid-area: partidoCuartos4; }
+  
+  .Semifinal {  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "partidoSemi1 partidoSemi2";
+    grid-area: Semifinal;
+  }
+  
+  .partidoSemi1 { grid-area: partidoSemi1; }
+  
+  .partidoSemi2 { grid-area: partidoSemi2; }
+  
+  .Final {  display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "partido3Puesto"
+      "partidoFinal";
+    grid-area: Final;
+  }
+  
+  .partido3Puesto { grid-area: partido3Puesto; }
+  
+  .partidoFinal { grid-area: partidoFinal; }
+  

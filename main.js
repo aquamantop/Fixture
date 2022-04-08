@@ -7,11 +7,26 @@ const puesto2 = document.getElementById("puesto2");
 const paises = document.querySelectorAll(".pais");
 const link = document.querySelector("#index");
 
+/* Elementos de sig-fase.html */
+const octavosFinal = document.getElementById("octavos");
+const octavosPaises = [];
+
+
+
 /* Trabajamos dentro de la ventana */
 window.addEventListener("load", () => {
 
+    /* Modificamos comportamiento de link para asegurarnos */
+    /* de que los grupos hayan sido completados */
+    // link.addEventListener("click", (e) => {
+    //     e.preventDefault();
+    //     alert("Completar fase de grupos");
+    // });
+
+    /* Funcion para elegir los primeros puestos */
     firts();
 
+    /* Funcion para elegir los segundos puestos */
     second();
 
 });
@@ -46,15 +61,23 @@ function firts () {
                 paises.forEach( e => {
                     e.addEventListener("click", () => {
                         let a = e.innerHTML + "-grupoUno1";
-                        octavos.push(e.innerHTML);
-                        console.log(octavos);
+                        octavosPaises.push(e.innerHTML);
+                        console.log(octavosPaises);
                         console.log(a);
+                        primeroDeGrupo(e.innerHTML);
                     });
                 });
             };
         });
     });
 };
+
+function primeroDeGrupo (pais) {
+    octavosFinal
+    
+}
+console.log(octavosFinal);
+
 
 /* Logica para elegir segundo puesto del grupo seleccionado */
 function second () {
@@ -93,6 +116,5 @@ function second () {
 };
 
 
-/* Elementos de sig-fase.html */
-const octavos = []
+
 
