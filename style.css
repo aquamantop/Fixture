@@ -138,7 +138,11 @@ a:hover {
 .puestos{
     color: rgb(238, 0, 0);
     position: absolute;
-    top: 55%;
-    right: 35%;
-    font-size: 5rem;
+    top: 53%;
+    right: 26%;
+    font-size: 4rem;
+}
+#volver {
+    background-color: black;
+    color: white;
 }
