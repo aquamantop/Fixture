@@ -155,125 +155,24 @@ a:hover {
 }
 
 /* Estilo de fase final */
-#sig-fase section {
-    width: 20%;
+#sig-fase {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 5rem;
+}
+
+#octavos {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(255, 255, 0);
+  font-weight: bolder;
+  border: 0.3rem solid rgb(255, 255, 0);
+  border-radius: 2rem;
+  padding: 3rem;
 }
 
 
 
-
-
-
-
-/* PRUEBA */
-
-.container {  display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2fr 1.5fr 1.5fr 2fr;
-    gap: 10em 5em;
-    grid-auto-flow: row;
-    justify-content: stretch;
-    align-content: stretch;
-    align-items: stretch;
-    grid-template-areas:
-      "Octavos1 Octavos2"
-      "Cuartos1 Cuartos2"
-      "Semifinal Semifinal"
-      "Final Final";
-  }
-  
-  .Octavos1 {  display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 20px 20px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "partido1 partido3"
-      "paritdo2 partido4";
-    grid-area: Octavos1;
-  }
-  
-  .partido1 { grid-area: partido1; }
-  
-  .paritdo2 { grid-area: paritdo2; }
-  
-  .partido3 { grid-area: partido3; }
-  
-  .partido4 { grid-area: partido4; }
-  
-  .Octavos2 {  display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 20px 20px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "partido5 partido7"
-      "partido6 partido8";
-    grid-area: Octavos2;
-  }
-  
-  .partido5 { grid-area: partido5; }
-  
-  .partido6 { grid-area: partido6; }
-  
-  .partido7 { grid-area: partido7; }
-  
-  .partido8 { grid-area: partido8; }
-  
-  .Cuartos1 {  display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 20px 20px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "partidoCuartos1 partidoCuartos2";
-    grid-area: Cuartos1;
-  }
-  
-  .partidoCuartos1 { grid-area: partidoCuartos1; }
-  
-  .partidoCuartos2 { grid-area: partidoCuartos2; }
-  
-  .Cuartos2 {  display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 0px 20px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "partidoCuartos3 partidoCuartos4";
-    grid-area: Cuartos2;
-  }
-  
-  .partidoCuartos3 { grid-area: partidoCuartos3; }
-  
-  .partidoCuartos4 { grid-area: partidoCuartos4; }
-  
-  .Semifinal {  display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 20px 20px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "partidoSemi1 partidoSemi2";
-    grid-area: Semifinal;
-  }
-  
-  .partidoSemi1 { grid-area: partidoSemi1; }
-  
-  .partidoSemi2 { grid-area: partidoSemi2; }
-  
-  .Final {  display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 20px 20px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "partido3Puesto"
-      "partidoFinal";
-    grid-area: Final;
-  }
-  
-  .partido3Puesto { grid-area: partido3Puesto; }
-  
-  .partidoFinal { grid-area: partidoFinal; }
   
