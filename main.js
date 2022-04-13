@@ -11,10 +11,9 @@ const link = document.querySelector("#index");
 const octavosFinal = document.getElementById("octavos");
 const octavosPaises = [];
 
-
-
 /* Trabajamos dentro de la ventana */
 window.addEventListener("load", () => {
+    
 
     /* Modificamos comportamiento de link para asegurarnos */
     /* de que los grupos hayan sido completados */
@@ -39,7 +38,7 @@ function firts () {
 
             /* Validamos */
             if (e.path[2].classList.value.includes("p2")){
-                alert("Estas eligiendo segundo puesto boludito");
+                alert("Estas eligiendo segundo puesto!!");
             } else {
                 /* Ocultamos tarjetas */
                 section.forEach( s => s.classList.toggle("hide"));
@@ -60,10 +59,7 @@ function firts () {
                 /* Marcamos pais elegido */
                 paises.forEach( e => {
                     e.addEventListener("click", () => {
-                        let a = e.innerHTML + "-grupoUno1";
-                        octavosPaises.push(e.innerHTML);
-                        console.log(octavosPaises);
-                        console.log(a);
+                        console.log(e.innerHTML);
                         primeroDeGrupo(e.innerHTML);
                     });
                 });
@@ -73,10 +69,10 @@ function firts () {
 };
 
 function primeroDeGrupo (pais) {
-    octavosFinal
-    
+    octavosPaises.push(pais);
+    console.log(octavosPaises);
 }
-console.log(octavosFinal);
+
 
 
 /* Logica para elegir segundo puesto del grupo seleccionado */
@@ -88,7 +84,7 @@ function second () {
 
             /* Validamos */
             if (e.path[2].classList.value.includes("p1")){
-                alert("Estas eligiendo primer puesto boludito");
+                alert("Estas eligiendo primer puesto!!");
             } else {
                 /* Ocultamos tarjetas */
                 section.forEach( s => s.classList.toggle("hide"));
