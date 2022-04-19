@@ -9,7 +9,8 @@ const link = document.querySelector("#index");
 
 /* Elementos de sig-fase.html */
 const octavosFinal = document.getElementById("octavos");
-const octavosPaises = [];
+const octavosPaisesPrimeros = [];
+const octavosPaisesSegundos = [];
 
 /* Trabajamos dentro de la ventana */
 window.addEventListener("load", () => {
@@ -26,7 +27,7 @@ window.addEventListener("load", () => {
     firts();
 
     /* Funcion para elegir los segundos puestos */
-    second();
+    seconds();
 
 });
 
@@ -36,81 +37,117 @@ function firts () {
         element.addEventListener("click", (e) => {
             e.preventDefault();   
 
+            let path = e.path[2];
+
             /* Validamos */
-            if (e.path[2].classList.value.includes("p2")){
-                alert("Estas eligiendo segundo puesto!!");
-            } else {
-                /* Ocultamos tarjetas */
-                section.forEach( s => s.classList.toggle("hide"));
+            volver(path.children);
+
+            /* Ocultamos tarjetas */
+            section.forEach( s => s.classList.add("hide"));
     
-                /* Trabajamos con la tarjeta activa */
-                e.path[2].classList.remove("hide");
-                e.path[2].classList.toggle("p1");
+            /* Trabajamos con la tarjeta activa */
+            path.classList.remove("hide");
 
-                /* Aviso para elegir pais */
-                puesto1.classList.toggle("hide");
-                puesto2.classList.add("hide");
-
-                /* Ocultamos link a fase final */
-                if (link.hidden){
-                        link.hidden = false
-                } else link.hidden = true;
-
-                /* Marcamos pais elegido */
-                paises.forEach( e => {
-                    e.addEventListener("click", () => {
-                        console.log(e.innerHTML);
-                        primeroDeGrupo(e.innerHTML);
-                    });
+            /* Marcamos pais elegido */
+            paises.forEach( e => {
+                e.addEventListener("click", () => {
+                    volver();
+                    console.log(e.innerHTML);
+                    primeroDeGrupo(e.innerHTML);
                 });
-            };
+            });
         });
     });
 };
 
 function primeroDeGrupo (pais) {
-    octavosPaises.push(pais);
-    console.log(octavosPaises);
-}
+    /* 
+    COSAS POR HACER
+    Recorrer grupo, si ya hay pais elegido, cambiarlo por la nueva eleccion.
+    Agregar distintivo de grupo para luego formas los encuentros de octavos.
+    */
 
-
+    octavosPaisesPrimeros.push(pais);
+    console.log(octavosPaisesPrimeros);
+};
 
 /* Logica para elegir segundo puesto del grupo seleccionado */
-function second () {
+function seconds () {
     segundos.forEach( element => {
         
         element.addEventListener("click", (e) => {
             e.preventDefault();       
 
+            let path = e.path[2];
+
             /* Validamos */
-            if (e.path[2].classList.value.includes("p1")){
-                alert("Estas eligiendo primer puesto!!");
-            } else {
-                /* Ocultamos tarjetas */
-                section.forEach( s => s.classList.toggle("hide"));
+            volver(path.children);
+            
+            /* Ocultamos tarjetas */
+            section.forEach( s => s.classList.add("hide"));
 
-                /* Trabajamos con la tarjeta activa */
-                e.path[2].classList.remove("hide");
-                e.path[2].classList.toggle("p2");
+            /* Trabajamos con la tarjeta activa */
+            path.classList.remove("hide");
 
-                /* Aviso para elegir pais */
-                puesto2.classList.toggle("hide");
-                puesto1.classList.add("hide");
-
-                /* Ocultamos link a fase final */
-                if (link.hidden){
-                        link.hidden = false
-                } else link.hidden = true;
-
-                /* Marcamos pais elegido */
-                paises.forEach( e => {
-                    
+            /* Marcamos pais elegido */
+            paises.forEach( e => {
+                e.addEventListener("click", () => {
+                    volver();
+                    console.log(e.innerHTML);
+                    segundoDeGrupo(e.innerHTML);
                 });
-            };
+            });
         });
+    });
+};
+
+function segundoDeGrupo (pais){
+    /* 
+    COSAS POR HACER
+    Recorrer grupo, si ya hay pais elegido, cambiarlo por la nueva eleccion.
+    Agregar distintivo de grupo para luego formas los encuentros de octavos.
+    */
+
+    octavosPaisesSegundos.push(pais);
+    console.log(octavosPaisesSegundos);
+};
+
+/* Boton para volver a ver los grupos */
+function volver (seccion) {
+    /* Creamos boton */
+    seccion[5].innerHTML = `<button id="volver">Volver</button>`
+
+    /* Lo seleccionamos */
+    let boton = document.getElementById("volver");
+
+    /* Volvemos a estado anterior */
+    boton.addEventListener("click", (e) => {
+        e.preventDefault();
+        section.forEach( s => s.classList.remove("hide"));
+        seccion[5].innerHTML = `<button class="ganadores primero">Elegir 1° puesto</button>
+                                <button class="ganadores segundo">Elegir 2° puesto</button>`
     });
 };
 
 
 
 
+// /* Validamos */
+// if (e.path[2].classList.value.includes("p2")){
+//     alert("Estas eligiendo segundo puesto!!");
+// } else {
+//     /* Ocultamos tarjetas */
+//     section.forEach( s => s.classList.toggle("hide"));
+
+//     /* Trabajamos con la tarjeta activa */
+//     e.path[2].classList.remove("hide");
+//     e.path[2].classList.toggle("p1");
+
+//     /* Aviso para elegir pais */
+//     puesto1.classList.toggle("hide");
+//     puesto2.classList.add("hide");
+
+//     /* Ocultamos link a fase final */
+//     if (link.hidden){
+//             link.hidden = false
+//     } else link.hidden = true;

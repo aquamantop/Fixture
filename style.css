@@ -106,8 +106,8 @@ h2 {
 button {
     border-radius: 2rem;
     padding: 0.8rem;
-    background-color: white;
-    text-shadow: 0px 0px 6px rgba(0, 0, 0, 1);
+    background-color: rgba(255, 255, 255, 0.719);
+    text-shadow: 0px 0px 6px rgb(0, 0, 0);
 }
 
 /* Estilo de las tarjetas */
@@ -132,7 +132,7 @@ p {
 h1 a {
     text-decoration: none;
     border: 2px solid;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(0, 0, 0, 0.295);
     text-align: center;
     border-radius: 1rem;
     padding: 0.5rem;
@@ -149,18 +149,9 @@ a:hover {
 .hide {
     display: none;
 }
-.puestos{
-    color: rgb(161, 252, 252);
-    position: absolute;
-    top: 60%;
-    right: 26%;
-    font-size: 4rem;
-    text-shadow: 0px 0px 6px rgba(0, 0, 0, 1);
-
-}
 #volver {
-    background-color: black;
-    color: white;
+    background-color: rgba(0, 0, 0, 0.295);
+    color: rgb(255, 255, 0);
 }
 
 /* Estilo de fase final */
@@ -181,7 +172,3 @@ a:hover {
   border-radius: 2rem;
   padding: 3rem;
 }
-
-
-
-  
